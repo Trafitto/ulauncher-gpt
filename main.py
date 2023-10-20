@@ -8,23 +8,22 @@ from ulauncher.api.shared.action.DoNothingAction import DoNothingAction
 
 from gpt import GPT
 EXTENSION_ICON = 'images/icon.png'
-class UlauncherGPTExtension(Extension):
 
+
+class UlauncherGPTExtension(Extension):
 
     def __init__(self):
         super().__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
-        
-        
-        
+
+
 class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
         items = []
-   
+
         gpt_client = GPT(extension.preferences)
-  
-            
+
         question = event.get_argument()
         if not question:
             return RenderResultListAction([
@@ -41,11 +40,12 @@ class KeywordQueryEventListener(EventListener):
                                     err,
                                     on_enter=CopyToClipboardAction(str(err)))
             ])
-            
+
         items.append(ExtensionResultItem(icon=EXTENSION_ICON, name="GPT", description=response,
-                                                 on_enter=CopyToClipboardAction(response)))
-        
+                                         on_enter=CopyToClipboardAction(response)))
+
         return RenderResultListAction(items)
-    
+
+
 if __name__ == '__main__':
     UlauncherGPTExtension().run()
