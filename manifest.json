@@ -1,0 +1,39 @@
+{
+    "required_api_version": "2",
+    "name": "ulauncher-gpt",
+    "description": "Use ChatGPT with Ulauncher",
+    "developer_name": "Trafitto",
+    "icon": "images/icon.png",
+    "options": {
+      "query_debounce": 3
+    },
+    "preferences": [
+        {
+            "id": "gpt",
+            "type": "keyword",
+            "name": "Ulauncher GPT",
+            "default_value": "gpt"
+        },
+        {
+            "id": "OPENAI_API_KEY",
+            "type": "input",
+            "name": "OpenAI API Key",
+            "description": "Your api key",
+            "default_value": ""
+        },
+        {
+            "id": "MODEL",
+            "type": "input",
+            "name": "Model",
+            "description": "OpenAI chat completion model",
+            "default_value": "gpt-3.5-turbo"
+        },
+        {
+            "id": "TEMPERATURE",
+            "type": "input",
+            "name": "Temperature",
+            "description": "Temperature is used to control the randomness of the output. From 0 to 2",
+            "default_value": "1"
+        }
+    ]
+  }
