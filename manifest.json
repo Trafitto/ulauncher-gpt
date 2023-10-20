@@ -34,6 +34,13 @@
             "name": "Temperature",
             "description": "Temperature is used to control the randomness of the output. From 0 to 2",
             "default_value": "1"
+        },
+        {
+            "id": "PERONALITY",
+            "type": "input",
+            "name": "Personality aka the system prompt",
+            "description": "The system message helps set the behavior of the assistant",
+            "default_value": ""
         }
     ]
   }
